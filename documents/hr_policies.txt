@@ -1,0 +1,112 @@
+# TechCorp HR Policies - Leave and Benefits
+
+## Employee Leave and Benefits Guide
+
+Effective Date: January 2024 | Human Resources Department
+
+### Types of Leave
+
+#### 1. Paid Time Off (PTO)
+
+PTO is based on years of service:
+
+| Years of Service | Annual PTO Days |
+|-----------------|-----------------|
+| 0-3 years | 15 days |
+| 4-7 years | 20 days |
+| 8+ years | 25 days |
+
+**PTO Guidelines:**
+- Requests should be submitted at least 2 weeks in advance
+- Maximum consecutive days: 10 (without VP approval)
+- Unused PTO: Up to 5 days can roll over annually
+- PTO is paid out upon separation (up to 40 hours)
+
+#### 2. Sick Leave
+- Unlimited sick leave policy (use responsibly)
+- Doctor's note required for absences > 3 consecutive days
+- Can be used for personal illness or family care
+- No payout upon separation
+
+#### 3. Parental Leave
+- **Primary Caregiver**: 16 weeks paid leave
+- **Secondary Caregiver**: 6 weeks paid leave
+- Can be taken within 12 months of birth/adoption
+- Gradual return option: 50% schedule for 2 additional weeks
+
+#### 4. Bereavement Leave
+- Immediate family: 5 paid days
+- Extended family: 3 paid days
+- Additional unpaid leave available upon request
+
+#### 5. Jury Duty
+- Full pay for jury service
+- Must provide court documentation
+- Return to work expected on non-service days
+
+### Health Benefits
+
+#### Medical Insurance
+Three plan options available:
+1. **PPO Select**: $150/month employee, $400/month family
+2. **HDHP with HSA**: $75/month employee, $200/month family
+3. **HMO Basic**: $100/month employee, $275/month family
+
+TechCorp contributes to HSA accounts:
+- Employee only: $500/year
+- Family coverage: $1,000/year
+
+#### Dental Insurance
+- Preventive care: 100% covered
+- Basic procedures: 80% covered
+- Major procedures: 50% covered
+- Annual maximum: $2,000
+
+#### Vision Insurance
+- Annual eye exam: fully covered
+- Frames: $200 allowance every 2 years
+- Contact lenses: $150 allowance annually
+
+### Retirement Benefits
+
+#### 401(k) Plan
+- Immediate eligibility upon hire
+- Company match: 100% on first 4%, 50% on next 2%
+- Maximum company contribution: 5% of salary
+- Immediate vesting on all contributions
+
+#### ESPP (Employee Stock Purchase Plan)
+- Purchase stock at 15% discount
+- Contribute 1-15% of salary
+- Enrollment periods: January and July
+
+### Professional Development
+
+#### Education Assistance
+- Up to $5,000/year for approved courses
+- Must maintain B grade or better
+- Commitment to stay 1 year after completion
+
+#### Conference Attendance
+- Up to 2 conferences per year
+- Budget: $3,000 annually
+- Requires manager approval
+
+### Wellness Programs
+
+- Gym membership reimbursement: $50/month
+- Mental health support: Free EAP counseling
+- Annual health screening: Fully covered
+- Wellness challenges with prizes
+
+### Contact HR
+
+For benefits questions:
+- Email: benefits@techcorp.com
+- Phone: Extension 5500
+- Portal: hr.techcorp.com
+
+For leave requests:
+- Submit through Workday
+- Manager approval required
+- HR review for extended leave

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AI Agent RAG - Intelligent Document Assistant powered by Azure OpenAI"
+    />
+    <title>AI Agent RAG | Intelligent Document Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <div class="logo-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
+                <path d="M12 2a10 10 0 0 1 10 10" />
+                <circle cx="12" cy="12" r="4" />
+              </svg>
+            </div>
+            <span class="logo-text">AI Agent RAG</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <button class="nav-item active" id="newChatBtn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            <span>New Chat</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-info">
+          <div class="info-card">
+            <h4>📚 Available Documents</h4>
+            <ul class="doc-list">
+              <li>Company Policies</li>
+              <li>Product Documentation</li>
+              <li>Company FAQ</li>
+              <li>Technical Guidelines</li>
+              <li>HR Policies</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="connection-status" id="connectionStatus">
+            <span class="status-dot"></span>
+            <span class="status-text">Checking...</span>
+          </div>
+          <div class="version">v1.0.0</div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Header -->
+        <header class="main-header">
+          <div class="header-content">
+            <h1>Intelligent Document Assistant</h1>
+            <p>Ask questions about company policies, products, and more</p>
+          </div>
+          <div class="header-actions">
+            <div class="session-info" id="sessionInfo">
+              <span class="session-label">Session:</span>
+              <span class="session-id" id="sessionId">Not started</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Chat Container -->
+        <div class="chat-container" id="chatContainer">
+          <!-- Welcome Message -->
+          <div class="welcome-screen" id="welcomeScreen">
+            <div class="welcome-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                />
+                <path d="M8 10h.01M12 10h.01M16 10h.01" />
+              </svg>
+            </div>
+            <h2>Welcome to AI Agent RAG</h2>
+            <p>
+              I'm your intelligent document assistant. I can answer questions
+              directly or search through company documents when needed.
+            </p>
+
+            <div class="suggestion-cards">
+              <button
+                class="suggestion-card"
+                data-query="What is the remote work policy?"
+              >
+                <span class="card-icon">🏠</span>
+                <span class="card-text">Remote work policy</span>
+              </button>
+              <button
+                class="suggestion-card"
+                data-query="How many PTO days do I get?"
+              >
+                <span class="card-icon">🏖️</span>
+                <span class="card-text">PTO allowance</span>
+              </button>
+              <button
+                class="suggestion-card"
+                data-query="What are the features of CloudSync Pro?"
+              >
+                <span class="card-icon">☁️</span>
+                <span class="card-text">CloudSync Pro features</span>
+              </button>
+              <button
+                class="suggestion-card"
+                data-query="What is the 401k matching policy?"
+              >
+                <span class="card-icon">💰</span>
+                <span class="card-text">401k matching</span>
+              </button>
+              <button
+                class="suggestion-card"
+                data-query="What are the code review requirements?"
+              >
+                <span class="card-icon">👨‍💻</span>
+                <span class="card-text">Code review standards</span>
+              </button>
+              <button
+                class="suggestion-card"
+                data-query="How do I reset my password?"
+              >
+                <span class="card-icon">🔐</span>
+                <span class="card-text">Password reset</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Messages Container -->
+          <div class="messages-container" id="messagesContainer"></div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+          <div class="input-container">
+            <textarea
+              id="queryInput"
+              placeholder="Ask me anything about company policies, products, or general questions..."
+              rows="1"
+              maxlength="2000"
+            ></textarea>
+            <button class="send-btn" id="sendBtn" disabled>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+          </div>
+          <div class="input-footer">
+            <span class="char-count"><span id="charCount">0</span>/2000</span>
+            <span class="hint"
+              >Press Enter to send, Shift+Enter for new line</span
+            >
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-spinner"></div>
+      <p>Processing your query...</p>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

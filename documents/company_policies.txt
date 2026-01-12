@@ -1,0 +1,60 @@
+# TechCorp Employee Handbook - Remote Work Policy
+
+## Remote Work Guidelines
+
+Last Updated: January 2024
+
+### Overview
+TechCorp embraces flexible work arrangements to support work-life balance while maintaining productivity and collaboration. This policy outlines the guidelines for remote work eligibility and expectations.
+
+### Eligibility
+All full-time employees who have completed their 90-day probationary period are eligible for remote work arrangements, subject to manager approval and role requirements.
+
+### Remote Work Options
+
+1. **Hybrid Model (Standard)**
+   - Employees may work remotely up to 3 days per week
+   - Minimum 2 days per week in office required
+   - Core collaboration days: Tuesday and Thursday (in-office)
+
+2. **Full Remote**
+   - Available for specific roles approved by department heads
+   - Requires quarterly in-person meetings
+   - Must be within 4 hours of the main office timezone
+
+### Equipment and Workspace
+
+- Company provides laptop, monitor, and essential peripherals
+- Home office stipend: $500 one-time setup allowance
+- Monthly internet reimbursement: $50
+
+### Communication Expectations
+
+- Available during core hours: 10 AM - 3 PM local time
+- Respond to messages within 2 hours during work hours
+- Camera on for team meetings
+- Daily check-in with team via Slack or Teams
+
+### Performance Standards
+
+Remote employees are held to the same performance standards as in-office employees. Performance is measured by:
+- Meeting deadlines and deliverables
+- Quality of work output
+- Collaboration and communication
+- Participation in team activities
+
+### Security Requirements
+
+- Use company VPN for all work activities
+- Enable two-factor authentication on all accounts
+- Never use public WiFi without VPN
+- Report any security incidents immediately
+
+### Approval Process
+
+1. Discuss with direct manager
+2. Submit Remote Work Request form in HR portal
+3. Await approval (typically 5 business days)
+4. Sign Remote Work Agreement
+
+For questions, contact HR at hr@techcorp.com or extension 5500.

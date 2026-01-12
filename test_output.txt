@@ -1,0 +1,24 @@
+﻿Initializing RAG Service...
+RAG Service initialized with 37 chunks
+Searching for: What is the remote work policy?
+Score: 0.9976 | Source: product_documentation.txt
+Content: it: 1000 requests/minute (Enterprise: unlimited)
+
+### Support Channels
+
+- Email: support@techcorp.co...
+--------------------
+Score: 0.9975 | Source: company_faq.txt
+Content: anagement
+Contact IT for other software requests.
+
+### Q: Can I use personal devices for work?
+A: BY...
+--------------------
+Score: 0.9970 | Source: hr_policies.txt
+Content: family care
+- No payout upon separation
+
+#### 3. Parental Leave
+- **Primary Caregiver**: 16 weeks pa...
+--------------------

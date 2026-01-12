@@ -1,0 +1,93 @@
+# TechCorp Technical Guidelines - Development Standards
+
+## Software Development Standards and Best Practices
+
+Version 2.1 | Engineering Department | Last Updated: November 2023
+
+### Code Quality Standards
+
+#### 1. General Principles
+- Follow SOLID principles
+- Write self-documenting code with clear naming conventions
+- Keep functions small and focused (max 50 lines recommended)
+- Maintain a maximum cyclomatic complexity of 10
+
+#### 2. Version Control (Git)
+- Use feature branches: `feature/TICKET-123-description`
+- Bug fix branches: `bugfix/TICKET-456-description`
+- Hotfix branches: `hotfix/TICKET-789-description`
+- Commit messages must include ticket number: `[TICKET-123] Add user authentication`
+- Squash commits before merging to main
+
+#### 3. Code Review Requirements
+- All code must be reviewed by at least one team member
+- Critical paths require two reviewers
+- Reviews should be completed within 24 hours
+- Automated checks must pass before review
+
+### Testing Standards
+
+#### Unit Testing
+- Minimum 80% code coverage for new code
+- 90% coverage for critical business logic
+- Use descriptive test names: `test_user_can_login_with_valid_credentials`
+- Mock external dependencies
+
+#### Integration Testing
+- Cover all API endpoints
+- Test database operations
+- Verify third-party integrations
+- Run in CI/CD pipeline
+
+#### Performance Testing
+- Load test for expected 2x normal traffic
+- Response time < 200ms for API calls (p95)
+- Memory usage within allocated limits
+
+### API Design Standards
+
+#### RESTful Conventions
+- Use plural nouns for resources: `/users`, `/orders`
+- Use HTTP methods appropriately:
+  - GET for retrieval
+  - POST for creation
+  - PUT/PATCH for updates
+  - DELETE for removal
+- Return appropriate status codes
+- Include pagination for list endpoints
+
+#### API Documentation
+- All endpoints documented in OpenAPI/Swagger
+- Include request/response examples
+- Document error responses
+- Keep documentation in sync with code
+
+### Security Guidelines
+
+#### Authentication & Authorization
+- Use OAuth 2.0 / JWT for API authentication
+- Implement RBAC for authorization
+- Token expiration: 1 hour (access), 7 days (refresh)
+- Never store sensitive data in JWT payload
+
+#### Data Protection
+- Encrypt PII at rest and in transit
+- Use parameterized queries (no SQL injection)
+- Sanitize all user inputs
+- Log security events for auditing
+
+### Deployment Process
+
+1. **Development** - Feature branch, local testing
+2. **Code Review** - PR submission, peer review
+3. **Staging** - Automated deployment, QA testing
+4. **Production** - Approved by team lead, monitored rollout
+
+### Incident Management
+
+- **P1 (Critical)**: System down, immediate response, 15-min escalation
+- **P2 (High)**: Major feature broken, 4-hour resolution target
+- **P3 (Medium)**: Minor issues, 24-hour resolution target
+- **P4 (Low)**: Cosmetic issues, addressed in normal sprint
+
+For questions, contact the Engineering Standards Committee: eng-standards@techcorp.com

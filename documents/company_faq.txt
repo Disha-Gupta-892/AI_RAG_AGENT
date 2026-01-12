@@ -1,0 +1,85 @@
+# TechCorp Frequently Asked Questions (FAQ)
+
+## General Questions
+
+### Q: What are TechCorp's office hours?
+A: Our main office is open Monday through Friday, 8:00 AM to 6:00 PM local time. Core business hours are 9:00 AM to 5:00 PM.
+
+### Q: How do I contact IT support?
+A: IT support can be reached through multiple channels:
+- Helpdesk Portal: helpdesk.techcorp.com
+- Email: it-support@techcorp.com
+- Phone: Extension 4000 or 1-800-TECH-HELP
+- Slack: #it-helpdesk channel
+
+### Q: What is the company's PTO policy?
+A: Full-time employees receive:
+- 15 days PTO in years 1-3
+- 20 days PTO in years 4-7
+- 25 days PTO after 7+ years
+- Plus 10 paid holidays annually
+- Sick leave: Unlimited (within reason)
+
+### Q: How do I request time off?
+A: Submit time off requests through Workday at least 2 weeks in advance. Emergency time off should be communicated to your manager directly.
+
+## Benefits Questions
+
+### Q: When does health insurance coverage begin?
+A: Health insurance coverage begins on the first day of the month following your start date.
+
+### Q: What health plans are available?
+A: TechCorp offers three health plan options:
+1. PPO Plan - Higher premiums, lower deductibles, wider network
+2. HDHP Plan - Lower premiums, higher deductibles, HSA eligible
+3. HMO Plan - Moderate premiums, requires PCP referrals
+
+### Q: Does TechCorp offer 401(k) matching?
+A: Yes! TechCorp matches 100% of contributions up to 4% of salary, and 50% of the next 2%. Maximum match is 5% of salary. Immediate vesting for all contributions.
+
+### Q: Is there a employee stock purchase plan?
+A: Yes, employees can purchase TechCorp stock at a 15% discount through payroll deductions. Enrollment periods open twice yearly.
+
+## Technology & Security
+
+### Q: How do I reset my password?
+A: Visit password.techcorp.com or call IT support. Passwords must be changed every 90 days and must include:
+- Minimum 12 characters
+- Uppercase and lowercase letters
+- At least one number
+- At least one special character
+
+### Q: What software is approved for use?
+A: Approved software includes:
+- Microsoft 365 Suite
+- Slack for messaging
+- Zoom for video conferencing
+- CloudSync Pro for file storage
+- Jira/Confluence for project management
+Contact IT for other software requests.
+
+### Q: Can I use personal devices for work?
+A: BYOD is permitted with IT approval. Personal devices must:
+- Have MDM software installed
+- Meet minimum security requirements
+- Be registered with IT department
+
+## Career Development
+
+### Q: How do performance reviews work?
+A: Performance reviews are conducted semi-annually (June and December). The process includes:
+1. Self-assessment
+2. Peer feedback (optional)
+3. Manager review
+4. Calibration session
+5. One-on-one discussion
+
+### Q: Is there a tuition reimbursement program?
+A: Yes, TechCorp reimburses up to $5,000 annually for job-related education. Courses must be pre-approved and completed with a grade of B or better.
+
+### Q: How can I request an internal transfer?
+A: Internal transfers are encouraged! Process:
+1. Discuss with current manager
+2. Apply through internal job board
+3. Complete interview with new team
+4. If selected, transition period is typically 4-6 weeks

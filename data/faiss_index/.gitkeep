@@ -1,0 +1,3 @@
+# FAISS Index Storage Directory
+# This directory is used to persist the FAISS vector index
+# The index will be automatically created when documents are first indexed
