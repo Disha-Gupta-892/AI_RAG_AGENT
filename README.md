@@ -61,7 +61,7 @@ An intelligent **AI Agent backend system** with **Retrieval-Augmented Generation
 │  │                     │         │  │                         │       │
 │  │  LLM generates      │         │  │  1. Generate Query      │       │
 │  │  answer directly    │         │  │     Embedding           │       │
-│  │                     │         │  │  2. FAISS Vector Search │       │
+│  │  2. Azure AI Search     │       │
 │  └─────────────────────┘         │  │  3. Retrieve Top-K      │       │
 │                                  │  │  4. Context Injection   │       │
 │                                  │  │  5. LLM Generation      │       │
@@ -83,7 +83,7 @@ An intelligent **AI Agent backend system** with **Retrieval-Augmented Generation
 3. **Query Classification** → Agent uses Azure OpenAI with tool calling to decide approach
 4. **Processing Path**:
    - **Direct**: LLM generates response from knowledge
-   - **RAG**: Query embedding → FAISS search → Context injection → LLM response
+   - **RAG**: Query embedding → Azure AI Search → Context injection → LLM response
 5. **Response** → Structured JSON with answer, sources, and metadata
 
 ---
@@ -94,7 +94,7 @@ An intelligent **AI Agent backend system** with **Retrieval-Augmented Generation
 | --------------------- | ---------------------- | ----------------------------- |
 | **Backend Framework** | FastAPI 0.109          | High-performance async API    |
 | **LLM Provider**      | Azure OpenAI           | Chat completions & embeddings |
-| **Vector Store**      | FAISS                  | Efficient similarity search   |
+| **Vector Store**      | Azure AI Search        | Efficient similarity search   |
 | **Embeddings**        | text-embedding-ada-002 | Document vectorization        |
 | **Containerization**  | Docker                 | Deployment packaging          |
 | **Cloud Platform**    | Azure (App Service)    | Production hosting            |
@@ -140,7 +140,7 @@ ai-agent-rag-backend/
 │       ├── __init__.py
 │       ├── agent_service.py   # Core AI agent logic
 │       ├── azure_openai_service.py  # Azure OpenAI client
-│       ├── rag_service.py     # RAG pipeline (FAISS)
+      ├── rag_service.py     # RAG pipeline (Azure AI Search)
 │       └── session_service.py # Session management
 ├── documents/                  # Sample documents for RAG
 │   ├── company_policies.txt
@@ -149,7 +149,7 @@ ai-agent-rag-backend/
 │   ├── product_documentation.txt
 │   └── technical_guidelines.txt
 ├── data/
-│   └── faiss_index/           # Generated FAISS index
+│   └── azure_search_index/    # Azure AI Search index data
 ├── main.py                    # Application entry point
 ├── requirements.txt           # Python dependencies
 ├── Dockerfile                 # Container definition
@@ -445,16 +445,16 @@ Instead of simple keyword matching or rule-based classification, we use Azure Op
 
 **Rationale**: More accurate classification, handles edge cases better, and is extensible for additional tools.
 
-### 2. **FAISS for Vector Storage**
+### 2. **Azure AI Search for Vector Storage**
 
-Chose FAISS over alternatives (Pinecone, Weaviate, ChromaDB) for several reasons:
+Chose Azure AI Search over alternatives (Pinecone, Weaviate, ChromaDB) for several reasons:
 
-- Zero external dependencies (runs locally)
-- No API costs
-- Fast similarity search
-- Simple to deploy (file-based persistence)
+- Managed service with high availability
+- Integrated with Azure ecosystem
+- Scalable vector search capabilities
+- Built-in security and compliance features
 
-**Trade-off**: Limited scalability compared to managed solutions, but suitable for the document volume in this use case.
+**Trade-off**: API costs, but provides enterprise-grade scalability and reliability.
 
 ### 3. **In-Memory Session Storage**
 
@@ -473,7 +473,7 @@ All services (Azure OpenAI, RAG, Session) use singleton pattern.
 **Rationale**:
 
 - Avoid re-initializing expensive resources
-- Maintain single FAISS index in memory
+- Maintain consistent Azure AI Search client
 - Consistent state across requests
 
 ### 5. **Chunking Strategy**
@@ -494,7 +494,7 @@ Used sentence-boundary-aware chunking with overlap.
 
 1. **Session Storage**: In-memory only; sessions lost on restart
 2. **Document Types**: Only `.txt` files supported
-3. **Scalability**: Single FAISS index limits horizontal scaling
+3. **Scalability**: Azure AI Search provides horizontal scaling
 4. **Authentication**: No built-in auth mechanism
 
 ### Recommended Improvements
@@ -503,7 +503,7 @@ Used sentence-boundary-aware chunking with overlap.
 | -------------------- | -------------- | --------------------------- |
 | **Session Storage**  | In-memory dict | Redis or Azure Cache        |
 | **Document Support** | Text only      | Add PDF, Word, HTML parsers |
-| **Vector Store**     | Local FAISS    | Azure AI Search for scale   |
+| **Vector Store**     | Azure AI Search| Azure AI Search for scale   |
 | **Auth**             | None           | Azure AD / API Keys         |
 | **Monitoring**       | Basic logging  | Azure Application Insights  |
 | **Rate Limiting**    | None           | Add middleware              |
