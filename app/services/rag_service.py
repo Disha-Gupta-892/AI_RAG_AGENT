@@ -5,20 +5,11 @@ Handles document processing, embedding storage, and retrieval using Azure AI Sea
 
 import os
 import logging
+import pickle
 from pathlib import Path
 from typing import List, Tuple, Optional
 import numpy as np
-from azure.core.credentials import AzureKeyCredential
-from azure.search.documents import SearchClient
-from azure.search.documents.indexes import SearchIndexClient
-from azure.search.documents.indexes.models import (
-    SearchIndex,
-    SearchField,
-    SearchFieldDataType,
-    VectorSearch,
-    VectorSearchProfile,
-    HnswAlgorithmConfiguration,
-)
+import faiss
 from app.core.config import settings
 from app.services.azure_openai_service import get_azure_openai_service
 
