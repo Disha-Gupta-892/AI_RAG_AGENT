@@ -103,6 +103,11 @@ $apiKey = Read-Host "Azure OpenAI API Key"
 $endpoint = Read-Host "Azure OpenAI Endpoint (e.g., https://myresource.openai.azure.com/)"
 $deploymentName = Read-Host "Chat Model Deployment Name (e.g., gpt-4)"
 $embeddingDeployment = Read-Host "Embedding Model Deployment Name (e.g., text-embedding-ada-002)"
+$searchEndpoint = Read-Host "Azure AI Search Endpoint (e.g., https://mysearch.search.windows.net)"
+$searchKey = Read-Host "Azure AI Search Admin Key"
+$searchIndex = Read-Host "Azure AI Search Index Name (default: rag-index)"
+
+if (-not $searchIndex) { $searchIndex = "rag-index" }
 
 az webapp config appsettings set `
     --name $AppName `
@@ -113,6 +118,9 @@ az webapp config appsettings set `
         AZURE_OPENAI_DEPLOYMENT_NAME="$deploymentName" `
         AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME="$embeddingDeployment" `
         AZURE_OPENAI_API_VERSION="2024-02-15-preview" `
+        AZURE_SEARCH_SERVICE_ENDPOINT="$searchEndpoint" `
+        AZURE_SEARCH_ADMIN_KEY="$searchKey" `
+        AZURE_SEARCH_INDEX_NAME="$searchIndex" `
         WEBSITES_PORT="8000" `
     --output none
 

@@ -49,12 +49,12 @@ class Settings(BaseSettings):
     TEMPERATURE: float = 0.7
     MAX_TOKENS: int = 1000
     
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        case_sensitive = True
-        extra = "allow"
-
+    model_config = {
+        "env_file": ".env",
+        "env_file_encoding": "utf-8",
+        "case_sensitive": True,
+        "extra": "ignore"
+    }
 
 # Clear cache if exists
 get_settings_cached = None
