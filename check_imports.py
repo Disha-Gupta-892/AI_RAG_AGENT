@@ -11,12 +11,12 @@ try:
     import pydantic
     logger.info("Importing numpy...")
     import numpy
-    logger.info("Importing faiss...")
-    import faiss
+    logger.info("Importing azure.search.documents...")
+    import azure.search.documents
+    logger.info("Importing azure.identity...")
+    import azure.identity
     logger.info("Importing openai...")
     import openai
-    logger.info("Importing langchain...")
-    import langchain
     logger.info("All base imports successful")
     
     logger.info("Importing app modules...")

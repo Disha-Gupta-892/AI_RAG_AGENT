@@ -37,7 +37,7 @@ ENV PATH=/root/.local/bin:$PATH
 COPY . .
 
 # Create directories for data persistence
-RUN mkdir -p data/faiss_index
+# RUN mkdir -p data/faiss_index
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
