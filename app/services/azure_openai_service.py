@@ -1,7 +1,6 @@
 """
 Azure OpenAI Service module.
 Handles all interactions with Azure OpenAI for chat completions and embeddings.
-In demo mode, returns mock responses without API calls.
 """
 
 import logging
@@ -104,22 +103,16 @@ _azure_openai_service = None
 
 def get_azure_openai_service():
     """
-    Get or create the Azure OpenAI service singleton.
-    Returns mock service in demo mode.
-    
+    Get or create the LLM service singleton.
+    Always returns the real Azure OpenAI service for deployment.
+
     Returns:
-        AzureOpenAIService or MockAzureOpenAIService instance
+        AzureOpenAIService instance
     """
     global _azure_openai_service
-    
+
     if _azure_openai_service is None:
-        if settings.DEMO_MODE:
-            # Use mock service in demo mode
-            from app.services.mock_openai_service import get_mock_openai_service
-            _azure_openai_service = get_mock_openai_service()
-            logger.info("Using MOCK OpenAI Service (Demo Mode)")
-        else:
-            # Use real Azure OpenAI service
-            _azure_openai_service = AzureOpenAIService()
-    
+        _azure_openai_service = AzureOpenAIService()
+        logger.info("Using Azure OpenAI Service")
+
     return _azure_openai_service

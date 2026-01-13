@@ -33,17 +33,17 @@ async def lifespan(app: FastAPI):
     # Startup
     logger.info("Starting AI Agent RAG Backend...")
     
-    # Initialize services (lazy loading, but we can pre-warm here)
+    # Initialize services
     try:
         from app.services.rag_service import get_rag_service
         from app.services.agent_service import get_agent_service
         
         # Pre-initialize services
+        # Note: In production, index_documents should be handled by a background task or CI/CD
         rag_service = get_rag_service()
         agent_service = get_agent_service()
         
-        logger.info(f"RAG Service initialized with {len(rag_service.chunks)} document chunks")
-        logger.info("AI Agent Service initialized")
+        logger.info("AI Agent and RAG Services initialized")
         logger.info("Application startup complete")
         
     except Exception as e:
@@ -60,26 +60,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION,
-    description="""
-    ## AI Agent RAG Backend
-    
-    An intelligent AI Agent that can:
-    - Answer questions directly using Azure OpenAI
-    - Retrieve and use relevant documents (RAG) when needed
-    - Maintain conversation context across sessions
-    
-    ### Features
-    - **Intelligent Query Routing**: Automatically decides whether to use RAG or direct LLM response
-    - **Document Retrieval**: Uses FAISS for efficient vector similarity search
-    - **Session Memory**: Maintains conversation history for context
-    - **Tool Calling**: Uses OpenAI function calling for smart decision making
-    
-    ### Endpoints
-    - `POST /ask` - Main endpoint for querying the agent
-    - `GET /health` - Health check endpoint
-    - `POST /reindex` - Re-index documents
-    - `DELETE /session/{session_id}` - Clear session history
-    """,
+    description="AI Agent RAG Backend",
     lifespan=lifespan
 )
 
@@ -130,6 +111,7 @@ async def api_info():
 
 if __name__ == "__main__":
     import uvicorn
+    # In Azure App Service, the port is typically 80 or 8000
     uvicorn.run(
         "main:app",
         host="0.0.0.0",

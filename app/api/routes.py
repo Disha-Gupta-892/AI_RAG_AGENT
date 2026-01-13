@@ -78,11 +78,7 @@ async def reindex_documents():
         from app.services.rag_service import get_rag_service
         rag_service = get_rag_service()
         
-        # Clear existing index
-        rag_service.index.reset()
-        rag_service.chunks = []
-        
-        # Re-index documents
+        # Re-index documents (Update/Upload existing documents)
         num_chunks = rag_service.index_documents()
         
         return {"message": f"Successfully indexed {num_chunks} document chunks"}

@@ -7,7 +7,7 @@
 // Configuration
 // ===================================
 const CONFIG = {
-    API_BASE_URL: 'http://localhost:8000/api/v1',
+    API_BASE_URL: '/api/v1',
     HEALTH_CHECK_INTERVAL: 30000, // 30 seconds
     TOAST_DURATION: 4000,
 };

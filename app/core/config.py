@@ -20,15 +20,17 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = False
     
-    # Demo Mode - Set to true to run without Azure OpenAI
-    DEMO_MODE: bool = True
-    
-    # Azure OpenAI Configuration (optional in demo mode)
-    AZURE_OPENAI_API_KEY: Optional[str] = None
-    AZURE_OPENAI_ENDPOINT: Optional[str] = None
-    AZURE_OPENAI_DEPLOYMENT_NAME: Optional[str] = None  # For chat completions
-    AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME: Optional[str] = None  # For embeddings
+    # Azure OpenAI Configuration
+    AZURE_OPENAI_API_KEY: str = ""
+    AZURE_OPENAI_ENDPOINT: str = ""
+    AZURE_OPENAI_DEPLOYMENT_NAME: str = ""
+    AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME: str = ""
     AZURE_OPENAI_API_VERSION: str = "2024-02-15-preview"
+    
+    # Azure AI Search Configuration
+    AZURE_SEARCH_SERVICE_ENDPOINT: str = ""
+    AZURE_SEARCH_ADMIN_KEY: str = ""
+    AZURE_SEARCH_INDEX_NAME: str = "rag-index"
     
     # RAG Configuration
     CHUNK_SIZE: int = 500
@@ -36,18 +38,22 @@ class Settings(BaseSettings):
     TOP_K_RESULTS: int = 3
     SIMILARITY_THRESHOLD: float = 0.7
     
-    # Vector Store Configuration
-    FAISS_INDEX_PATH: str = "data/faiss_index"
+    # Documents Configuration
     DOCUMENTS_PATH: str = "documents"
     
     # Session Configuration
     MAX_SESSION_HISTORY: int = 10
     SESSION_TIMEOUT_MINUTES: int = 60
+
+    # Model Parameters
+    TEMPERATURE: float = 0.7
+    MAX_TOKENS: int = 1000
     
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
         case_sensitive = True
+        extra = "allow"
 
 
 # Clear cache if exists

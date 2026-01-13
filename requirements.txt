@@ -1,5 +1,5 @@
 # AI Agent RAG Backend - Python Dependencies
-# Production-ready dependencies for Azure deployment
+# Production-ready version for Azure Deployment
 
 # Web Framework
 fastapi==0.109.0
@@ -8,15 +8,17 @@ pydantic==2.5.3
 pydantic-settings==2.1.0
 
 # Azure OpenAI
-openai==1.12.0
+openai>=1.12.0
 
-# Vector Store
-azure-search-documents>=11.4.0
+# Azure AI Search
+azure-search-documents==11.4.0
 azure-identity>=1.15.0
+
+# Data Processing
 numpy>=1.24.0
 
 # HTTP Client
-httpx==0.26.0
+httpx>=0.26.0
 
 # Utilities
 python-dotenv==1.0.0
